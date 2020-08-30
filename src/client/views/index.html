@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Evaluate a news article with Natural Language Processing</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="">
+            Evaluate a News Article with Natural Language Processing
+        </div>
+    </header>
+
+    <main>
+        <form class="" onsubmit="return Client.handleSubmit(event)">
+            <textarea id="name" name="input" placeholder="Input Article Text" rows="25" cols="100"></textarea>
+            <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)"
+                onsubmit="return Client.handleSubmit(event)">
+        </form>
+        <section class="results">
+            <ul>
+                <li>
+                    <h3>Subjectivity:</h3>
+                    <p id="subjectivity"></p>
+                </li>
+                <li>
+                    <h3>Confidence: </h4>
+                        <p id="confidence"></p>
+                </li>
+                <li>
+                    <h3>Irony:</h3>
+                    <p id="irony"></p>
+                </li>
+
+                <li>
+                    <h3>Sentimented Concept Form:</h3>
+                    <p id="sentimented_concept_form"></p>
+                </li>
+                <li>
+                    <h3>Sentimented Concept Score Tag:</h4>
+                        <p id="sentimented_concept_score_tag"></p>
+                </li>
+                <li>
+                    <h3>Sentimented Concept Type:</h4>
+                        <p id="sentimented_concept_type"></p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js').then(register => {
+                    console.log('SW registered: ', register);
+                });
+            });
+        } else {
+            console.log("Service Worker not registered");
+        }
+    </script>
+</body>
+
+</html>
