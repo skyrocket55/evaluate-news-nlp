@@ -22,7 +22,7 @@ You could spend years and get a masters degree focusing on the details of creati
 ` $ npm run build-dev` and ` $ npm run build-prod`
 ` $ npm run start`
 
-Development will run at port 8081. Server will run at port 8000.
+Development will run at port 8080. Server will run at port 8000.
 
 ## Config Files
 The project has a `package.json` file that has all the required packages.  Webpack config files for dev and production are `webpack.config.dev.js` and `webpack.config.prod.js`.
