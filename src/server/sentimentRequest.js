@@ -1,3 +1,5 @@
+const dotenv = require('dotenv').config();
+
 function postSentiment(req, res) {
 
     request = req.body.text;
@@ -14,12 +16,12 @@ function postSentiment(req, res) {
     request = request.replace(/\s/g, '+');
 
     const https = require('follow-redirects').https;
-
+    
     // https://www.meaningcloud.com/developer/sentiment-analysis/dev-tools/2.1
     var options = {
         'method': 'POST',
         'hostname': 'api.meaningcloud.com',
-        'path': `/sentiment-2.1?key=ed72fea1afaafecd847535d828a71bc8&lang=en&txt=${request}&model=general&txtf=plain`,
+        'path': `/sentiment-2.1?key=${dotenv.parsed['process.env.API_KEY']}&lang=en&txt=${request}&model=general&txtf=plain`,
         'headers': {
             'Content-Type': 'application/json'
         },
